@@ -1,5 +1,5 @@
 import sql from 'mssql';
-import { configuracion } from './readConfig';
+import { configuracion } from '../../config/readConfig.js';
 
 const config = {
     server: configuracion.servidor,
@@ -8,7 +8,7 @@ const config = {
     password: configuracion.claveBd,
     port: parseInt(configuracion.puerto),
     options: {
-        encryhpt: false,
+        encrypt: false,
         trustServerCertificate: true
     },
 };
@@ -37,7 +37,7 @@ export const executeRequest = async ({
     isStoredProcedure = false,
 }) => {
     try {
-        const pool = getPool();
+        const pool = await getPool();
         const request = pool.request();
         
         // Agregar los parámetros de entrada

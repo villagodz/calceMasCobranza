@@ -1,17 +1,16 @@
 import express from "express";
-import { login, logout, session } from '../controllers/auth.controllers.js'
-import authenticate from '../../config/jwt.config.js';
+import { login } from '../controllers/auth.controllers.js'
 
 const router = express.Router();
 
 
 //LOGIN
-router.post("/", login)
+router.get("/", login)
 
 //LOGOUT
-router.delete("/", authenticate, logout)
+//router.delete("/",  logout)
 
 //SESSION
-router.get("/", authenticate, session)
+//router.get("/", session)
 
 export default router;

@@ -1,6 +1,5 @@
-import User from "../models/User.model.js";
 
-const create = async (req,res) => {
+/*const create = async (req,res) => {
     try {
         const data = req.body;
         const newElement = await User.create(data);
@@ -45,4 +44,6 @@ export default {
     create,
     findById,
     findAll
-}
+}*/
+
+

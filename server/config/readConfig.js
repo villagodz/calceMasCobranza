@@ -1,4 +1,5 @@
 import fs from "fs";
+import { parse } from "path";
 /**
  *  Funcion para leer el archivo de configuracion que esta en el sistema
  */
@@ -38,7 +39,7 @@ export const getInformacion = () => {
 
 try {
 
-    const configData = readFile("C:/FacturaElectronica/configFactura.txt");
+    const configData = readFile("C:/CalceMas/configCalceMas.txt");
     if (!configData) {
       throw new Error("No se pudo leer el archivo de configuración.");
     }
@@ -48,7 +49,7 @@ try {
     const config = parseConfig(configData);
     //console.log(config)
     // Extrae los campos que te interesan
-    const servidor = config["servidor"];
+    const servidor = config["lan"]; 
     const nombreDB = config["nombreDB"];
     const usuario = config["usuario"];
     const claveBd = config["claveBd"];
